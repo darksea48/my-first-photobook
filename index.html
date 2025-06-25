@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Mi Photobook - Ejercicio Individual M2AE6</title>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-images"></i>Photobook
+            </a>
+            <!-- Botón Toggler para pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Contenido de la barra de navegación colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#main-content">Sobre el Photobook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galería</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#despedida">Despedida</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#starring">Participantes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-section position-relative mb-5" id="header">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="text-center text-white position-absolute top-50 start-50 bottom-50 translate-middle w-100" style="z-index: 2;">
+                <h1 class="display-2 fw-bold text-shadow">Mi intento de Photobook</h1>
+                <p class="lead fs-3 text-shadow">Realizando con jQuery, CSS y Bootstrap, para el ejercicio individual AE6 del Módulo 2.</p>
+            </div>
+        </div>
+        <div class="hero-carousel position-absolute top-0 start-0 w-100 h-100" style="z-index: 1;">
+            <div id="carouselExampleSlidesOnly" class="carousel slide h-100" data-bs-ride="carousel">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                        <img class="d-block w-100 h-100 object-fit-cover" src="https://i.postimg.cc/hjdFh24G/img-gatitos-1.avif" alt="First slide">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img class="d-block w-100 h-100 object-fit-cover" src="https://i.postimg.cc/x8DwmLq3/img-gatitos-2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img class="d-block w-100 h-100 object-fit-cover" src="https://i.postimg.cc/3w65KsT6/img-gatitos-3.jpg" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mb-5" id="main-content">
+        <div class="row justify-content-evenly align-items-stretch d-flex flex-row">
+            <div class="col-md-5 col-11 mb-3">
+                <div class="row">
+                    <div class="col-12 border border-dark shadow p-3 bg-body rounded h-100">
+                        <h2 class="text-center mb-4">¿Qué es un Photobook?</h2>
+                        <p class="text-justify">Un <span class="fst-italic">photobook</span> o fotolibro es una publicación que reúne una serie de fotografías organizadas cuidadosamente para contar una historia, transmitir una emoción o explorar en profundidad un tema específico. A diferencia de un álbum de fotos familiar, cuyo fin suele ser conmemorativo o anecdótico, el fotolibro propone una narrativa visual deliberada, donde cada imagen tiene un propósito dentro del conjunto. Esta narrativa puede ser de carácter documental, artístico, conceptual o incluso autobiográfico, y muchas veces se apoya en elementos adicionales como textos, secuencias, ritmos visuales y diseño editorial para potenciar el mensaje o la experiencia del lector. El fotolibro, por tanto, es una obra en sí misma, en la que la forma y el contenido se entrelazan para generar una lectura visual coherente y significativa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-11">
+                <div class="row">
+                    <div class="col-12 border border-dark shadow p-3 bg-body rounded h-100">
+                        <h2 class="text-center mb-4">¿De qué tratará este Photobook?</h2>
+                        <p class="text-justify">La propuesta consiste en una galería fotográfica compuesta por 42 imágenes, cuyo contenido presentará una selección de fotografías personales que retratan momentos cotidianos y especiales de mis gatos. El diseño de la galería será intencionadamente simple y limpio, con un enfoque visual tipo carrusel que permitirá desplazarse de forma fluida entre las distintas imágenes, garantizando una experiencia de navegación intuitiva y agradable.</p>
+
+                        <p class="text-justify">Además, cada fotografía contará con la funcionalidad de ampliación mediante un visor emergente (<span class="fst-italic">lightbox</span>), lo que permitirá al usuario hacer clic sobre cualquier imagen para visualizarla en una ventana aparte, en mayor tamaño y con mayor nivel de detalle. Esta característica no solo mejora la experiencia visual, sino que también invita a una contemplación más cercana y personal de cada momento capturado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- Galería de fotos en Carrusel Bootstrap -->
+
+    <div class="container-fluid bg-dark bg-gradient p-3 pb-4 mb-5" id="gallery">
+        <div class="row justify-content-center">
+            <h2 class="text-center text-white mb-4">Galería de fotos</h2> 
+            <div class="col-md-12 col-12">
+                <div class="row" id="galeria">
+                    <!-- Aquí se mostrarán las fotos -->
+                    
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto1" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/63Lj7DRz/img1.jpg" alt="Foto 1" >
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto2" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/nztShHsC/img2.jpg" alt="Foto 2">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto3" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/sgq0bPsP/img3.jpg" alt="Foto 3">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto4" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/25WXYqSs/img4.jpg" alt="Foto 4">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto5" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/ZKfQxtQM/img5.jpg" alt="Foto 5">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto6" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/qvz5mDVM/img6.jpg" alt="Foto 6">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto7" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/LXZ6k3vJ/img7.jpg" alt="Foto 7">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto8" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/MKZ4BK9B/img8.jpg" alt="Foto 8">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto9" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/sgNtsd9h/img9.jpg" alt="Foto 9">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto10" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/YSLTSnby/img10.jpg" alt="Foto 10">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto11" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/yYnMpSDn/img11.jpg" alt="Foto 11">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto12" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/kXnryygB/img12.jpg" alt="Foto 12">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto13" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/jS5GpdNT/img13.jpg" alt="Foto 13">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto14" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/mDn7djQC/img14.jpg" alt="Foto 14">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto15" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/85M8ZKvr/img15.jpg" alt="Foto 15">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto16" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/1XrkQ8Jm/img16.jpg" alt="Foto 16">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto17" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/PJjg9WbV/img17.jpg" alt="Foto 17">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto18" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/hGHWbWXB/img18.jpg" alt="Foto 18">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto19" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/SKXbMNNd/img19.jpg" alt="Foto 19">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto20" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/Vkk8zWx3/img20.jpg" alt="Foto 20">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto21" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/8zXVcrDs/img21.jpg" alt="Foto 21">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto22" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/B66LDFPy/img22.jpg" alt="Foto 22">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto23" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/fWYZCL7g/img23.jpg" alt="Foto 23">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto24" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/76WCNLgL/img24.jpg" alt="Foto 24">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto25" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/Nf4thzz6/img25.jpg" alt="Foto 25">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto26" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/tCybMj2R/img26.jpg" alt="Foto 26">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto27" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/sxGMHRc4/img27.jpg" alt="Foto 27">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto28" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/8cgGDQGH/img28.jpg" alt="Foto 28">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto29" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/Bt9H3v7v/img29.jpg" alt="Foto 29">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto30" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/7h1kZsYy/img30.jpg" alt="Foto 30">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto31" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/CKdSssJj/img31.jpg" alt="Foto 31">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto32" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/hv7TNmrw/img32.jpg" alt="Foto 32">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto33" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/wBW5SghC/img33.jpg" alt="Foto 33">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto34" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/FKqmWknw/img34.jpg" alt="Foto 34">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto35" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/brnQDnKP/img35.jpg" alt="Foto 35">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto36" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/1RV0jx4d/img36.jpg" alt="Foto 36">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto37" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/jSMRfF6x/img37.jpg" alt="Foto 37">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto38" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/cLGByFPc/img38.jpg" alt="Foto 38">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto39" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/YCM10h8c/img39.jpg" alt="Foto 39">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto40" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/J4W7CJ4L/img40.jpg" alt="Foto 40">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto41" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/9QYYYGzF/img41.jpg" alt="Foto 41">
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <div id="foto42" class="card p-2 border border-dark shadow m-2 zoom">
+                            <img class="fotografia object-fit-cover" src="https://i.postimg.cc/ZKVMTtFL/img42.jpg" alt="Foto 42">
+                        </div>
+                    </div>
+                    
+                    <!-- Fin de la galería de fotos -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el carrusel de Swiper -->
+    <div id="modal-carrusel" class="modal-carrusel-contenedor">
+        <span class="cerrar-modal">&times;</span>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Los slides se generarán dinámicamente con JS -->
+            </div>
+            <!-- Paginación -->
+            <div class="swiper-pagination"></div>
+            <!-- Botones de navegación -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!-- Sección Final (previa al footer) -->
+    <div class="container mb-5" id="despedida">
+        <div class="row justify-content-center align-items-stretch d-flex flex-row">
+            <div class="col-md-8 col-12 border border-dark shadow p-3 bg-body rounded mb-3">
+                <h2 class="text-center mb-4">¡Gracias por visitarnos! Espero te haya gustado mi fotolibro</h2>
+                <p class="text-justify">Espero sinceramente que hayas disfrutado de este pequeño recorrido visual, creado con mucho cariño como un homenaje a nuestros queridos gathijos peludos, quienes han sido más que simples mascotas: han sido compañeros leales, fuente de alegría cotidiana y parte esencial de nuestra historia familiar. Cada fotografía busca capturar no solo su ternura y particular personalidad, sino también esos momentos simples pero significativos que dan sentido a nuestra vida diaria.</p>
+
+                <p class="text-justify">Este espacio no solo refleja el amor por los animales, sino también una parte íntima de quienes estamos detrás de este proyecto. En particular, del hombre que ha dado forma a este sitio con mucha dedicación, y de su esposa, cuya presencia constante, apoyo incondicional y palabras de aliento han sido fundamentales para animar a este soñador empedernido —o, como ella lo llama con ternura, este loco de remate— a dar vida a esta idea.</p>
+
+                <p class="text-justify">Gracias por tomarte el tiempo de mirar, leer y acompañarnos en este pequeño pero significativo tributo.</p>
+            </div>
+        </div>
+     </div>
+
+     <!-- Seccion Starring -->
+     <div class="container mb-5" id="starring">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center mb-5">Participantes voluntarios de este fotolibro</h2>
+                <div class="row justify-content-center align-items-stretch d-flex flex-row">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card w-100 h-100 bg-light text-dark shadow zoom">
+                            <img src="https://i.postimg.cc/ZKVMTtFL/img42.jpg" class="card-img-top h-100 img-fluid object-fit-cover"
+                                alt="Tomate" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Tomate</h5>
+                                <p class="card-text text-center fst-italic">(o también llamado como <span class="fw-bold">Mache</span>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card w-100 h-100 bg-light text-dark shadow zoom">
+                            <img src="https://i.postimg.cc/SKXbMNNd/img19.jpg" class="card-img-top h-100 img-fluid object-fit-cover"
+                                alt="Champiñon" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Champiñon</h5>
+                                <p class="card-text text-center fst-italic">(llamado como <span class="fw-bold">Champi</span> o <span class="fw-bold">Pipi</span>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card w-100 h-100 bg-light text-dark shadow zoom">
+                            <img src="https://i.postimg.cc/fWYZCL7g/img23.jpg" class="card-img-top h-100 img-fluid object-fit-cover"
+                                alt="Kiki" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Kiki</h5>
+                                <p class="card-text text-center fst-italic">(antes Kitten, pero creció. También conocido con <span class="fw-bold">El Señor Amarillo</span>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card w-100 h-100 bg-light text-dark shadow zoom">
+                            <img src="https://i.postimg.cc/YSLTSnby/img10.jpg" class="card-img-top h-100 img-fluid object-fit-cover"
+                                alt="Cleopatra" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Cleopatra</h5>
+                                <p class="card-text text-center fst-italic">(Cleopatra Patricia, o mejor conocida como <span class="fw-bold">Cleo</span>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card w-100 h-100 bg-light text-dark shadow zoom">
+                            <img src="https://i.postimg.cc/yYnMpSDn/img11.jpg" class="card-img-top h-100 img-fluid object-fit-cover"
+                                alt="Oreo" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Oreo</h5>
+                                <p class="card-text text-center fst-italic">(Oreo Timón, alias: <span class="fw-bold">Omatopopih</span> o mejor dicho <span class="fw-bold">Popi</span>)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card w-100 h-100 bg-light text-dark shadow zoom">
+                            <img src="https://i.postimg.cc/B66LDFPy/img22.jpg" class="card-img-top h-100 img-fluid object-fit-cover"
+                                alt="Cinta" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Cinta</h5>
+                                <p class="card-text text-center fst-italic">(con la participación especial de la micha que es de mi suegra xD)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark text-white text-center py-4">
+        <p>Mi Photobook - Douglas Suárez Zamorano</p><p>Copyright 2025 - Todos los derechos reservados</p>
+        <a href="#" class="btn btn-outline-light btn-sm">Ir al inicio</a>
+    </footer>
+            
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

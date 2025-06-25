@@ -1,0 +1,151 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+#header {
+    height: 100vh; /* 100% de la altura del viewport (ventana) */
+}
+i {
+    margin-right: 0.5em;
+    margin-left: 0.1em;
+}
+.hero-section {
+    height: 100%;
+    overflow: hidden;
+    padding: 80px 0;
+    background-color: #000; /* Un fondo verde claro para la sección principal */
+    text-align: center;
+}
+.hero-section h1 {
+    color: #fff; /* Verde para el título principal */
+    font-size: 3.5rem;
+    margin-top: 10%;
+    margin-bottom: 20px;
+}
+.hero-section p {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+}
+.fotografia {
+    height: 300px;
+}
+.zoom {
+    transition: transform 0.3s ease-in-out;
+}
+.zoom:hover {
+    transform: scale(1.1);
+}
+.section-title {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.hero-carousel img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.4); /* Oscurece la imagen de fondo */
+}
+.text-justify {
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#carouselExampleCaptions {
+    height: 300px !important;
+}
+
+#carouselExampleCaptions img {
+    height: 300px !important;
+}
+
+/* Estilos para el modal del carrusel */
+.modal-carrusel-contenedor {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se queda fijo en la pantalla */
+    z-index: 1055; /* Encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro semitransparente */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-carrusel-contenedor .swiper {
+    width: 80%;
+    height: 80%;
+}
+
+.modal-carrusel-contenedor .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que la imagen se vea completa sin deformarse */
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1056; /* Encima del carrusel dentro del modal */
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+
+@media (min-width: 480px) {
+    .fotografia {
+        height: 350px;
+    }
+    #carouselExampleCaptions {
+        height: 400px !important;
+    }
+
+    #carouselExampleCaptions img {
+        height: 400px !important;
+    }
+}
+@media (min-width: 768px) {
+    .fotografia {
+        height: 300px;
+    }
+    #carouselExampleCaptions {
+        height: 500px !important;
+    }
+
+    #carouselExampleCaptions img {
+        height: 500px !important;
+    }
+}
+@media (min-width: 1024px) {
+    .fotografia {
+        height: 250px;
+    }
+    #carouselExampleCaptions {
+        height: 600px !important;
+    }
+
+    #carouselExampleCaptions img {
+        height: 600px !important;
+    }
+}
